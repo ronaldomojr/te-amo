@@ -35,7 +35,7 @@ export default function Carousel() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.9 }}
         className="relative mx-auto mt-10 max-w-3xl overflow-hidden rounded-3xl border border-rose-500/20 bg-wine-900/60 shadow-2xl"
         onMouseEnter={() => setPausado(true)}

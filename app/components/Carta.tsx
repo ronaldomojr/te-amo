@@ -23,7 +23,7 @@ export default function Carta() {
       <motion.div
         initial={{ opacity: 0, y: 60, rotateX: 18 }}
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 1, type: "spring", bounce: 0.2 }}
         style={{ transformPerspective: 1200 }}
         className="relative mx-auto mt-12 max-w-2xl"

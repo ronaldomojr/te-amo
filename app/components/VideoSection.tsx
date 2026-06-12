@@ -59,10 +59,10 @@ export default function VideoSection({
       </motion.p>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.92, y: 40 }}
+        initial={{ opacity: 0, scale: 0.95, y: 30 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.9, type: "spring", bounce: 0.25 }}
+        viewport={{ once: true, amount: 0.05 }}
+        transition={{ duration: 0.7, type: "spring", bounce: 0.2 }}
         className="relative mx-auto mt-10 max-w-3xl"
       >
         <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-rose-500 via-pink-400 to-rose-600 opacity-60 blur-md" />
