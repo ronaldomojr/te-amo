@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #160409;
+  --foreground: #fdf2f4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-wine-950: #160409;
+  --color-wine-900: #2b0a16;
+  --color-wine-800: #43101f;
+  --color-rose-glow: #fb7185;
+  --font-sans: var(--font-quicksand);
+  --font-script: var(--font-great-vibes);
+  --font-hand: var(--font-caveat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-quicksand), sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #fb7185;
+  color: #160409;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #160409;
+}
+::-webkit-scrollbar-thumb {
+  background: #9f1239;
+  border-radius: 8px;
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(105vh) scale(var(--s, 1)) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--o, 0.5);
+  }
+  90% {
+    opacity: var(--o, 0.5);
+  }
+  100% {
+    transform: translateY(-12vh) scale(var(--s, 1)) rotate(var(--r, 20deg));
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: 0;
+  animation: float-heart var(--d, 14s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(90deg, #fda4af, #f43f5e, #fecdd3, #e11d48, #fda4af);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.15);
+  }
+  20% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.12);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat {
+  animation: heartbeat 1.8s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* papel pautado da carta */
+.paper {
+  background-color: #fffaf3;
+  background-image:
+    linear-gradient(transparent 0, transparent calc(2.2rem - 1px), rgba(159, 18, 57, 0.12) calc(2.2rem - 1px), rgba(159, 18, 57, 0.12) 2.2rem);
+  background-size: 100% 2.2rem;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 10s linear infinite;
 }

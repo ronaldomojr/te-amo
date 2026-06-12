@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# midia original (NAO versionar): arquivos brutos pesados — HEIC, DNG,
+# .MOV de centenas de MB e o PDF da carta. O GitHub rejeita arquivos > 100 MB
+# e a Vercel nao precisa deles: tudo que o site usa ja foi convertido para /public.
+/arquivos/
+
+# screenshots gerados nos testes locais
+/scripts/shots/
